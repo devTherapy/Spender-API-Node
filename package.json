@@ -1,0 +1,45 @@
+{
+  "name": "spendr-api",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node swagger.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon swagger.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "swagger-output.json"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.7"
+  },
+  "private": "true",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.25.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "datauri": "^3.0.0",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.6.2",
+    "sequelize-auto-migrations": "^1.0.3",
+    "sequelize-cli": "^6.2.0",
+    "supports-color": "^8.1.1",
+    "swagger-autogen": "^2.7.9",
+    "swagger-ui-express": "^4.1.6",
+    "uuid": "^8.3.2"
+  }
+}

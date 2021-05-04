@@ -1,0 +1,143 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "spender API",
+    "description": "Documentation for the spender API"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "User",
+      "description": "Endpoints"
+    },
+    {
+      "name": "Merchant",
+      "description": "merchant endpoints"
+    },
+    {
+      "name": "Card",
+      "description": "card endpoints"
+    },
+    {
+      "name": "Transactoion",
+      "description": "transaction endpoints"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apikey",
+      "in": "cookie",
+      "name": "access_token",
+      "description": "cookie based authentication"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "FirstName": {
+          "type": "string",
+          "example": "John"
+        },
+        "LastName": {
+          "type": "string",
+          "example": "Doe"
+        },
+        "Email": {
+          "type": "string",
+          "example": "abe@gmail.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "King4#Latin"
+        },
+        "ProfilePicture": {
+          "type": "string",
+          "example": "http://"
+        },
+        "Wallet": {
+          "$ref": "#/definitions/Wallet"
+        },
+        "Phonenumbers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Phonenumber"
+          }
+        },
+        "Cards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Card"
+          }
+        },
+        "Transactions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Transaction"
+          }
+        }
+      }
+    },
+    "Card": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "example": 1000
+        },
+        "Merchant": {
+          "type": "string",
+          "example": "chicken republic"
+        }
+      }
+    },
+    "Transaction": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "example": 1000
+        },
+        "Type": {
+          "type": "string",
+          "example": "credit"
+        }
+      }
+    },
+    "Phonenumber": {
+      "type": "object",
+      "properties": {
+        "CountryCode": {
+          "type": "string",
+          "example": "+234"
+        },
+        "AreaCode": {
+          "type": "string",
+          "example": "81634556789"
+        }
+      }
+    },
+    "Wallet": {
+      "type": "object",
+      "properties": {
+        "Balance": {
+          "type": "number",
+          "example": 1000
+        }
+      }
+    }
+  }
+}
